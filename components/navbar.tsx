@@ -5,6 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -80,6 +81,9 @@ export function Navbar() {
             >
               Menu
             </a>
+            <Link href="/franchise" className="text-foreground/80 hover:text-primary transition-colors">
+              Franchise
+            </Link>
             <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Contact Us</Button>
             </a>
@@ -128,6 +132,13 @@ export function Navbar() {
               >
                 Menu
               </a>
+              <Link
+                href="/franchise"
+                className="text-foreground/80 hover:text-primary transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Franchise
+              </Link>
               <a href="#contact" onClick={(e) => handleNavClick(e, "#contact")}>
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-fit">Contact Us</Button>
               </a>
